@@ -11,7 +11,7 @@ results = []
 data = []
 
 valied_marks=[0,20,40,60,80,100,120]
-
+  
 from graphics import *
 def histogram_window():
     #OPEN THE WINDOW 
@@ -46,7 +46,7 @@ def histogram_window():
     Total_text.setTextColor("grey")
     Total_text.draw(win)
 
-        # histrogram bar edits
+    # histrogram bar edits
     barr_width = 15
     bar1=Rectangle(Point(100,490),Point(180 + barr_width,490-(progress / Total )*200))
     bar1.draw(win)
@@ -91,6 +91,7 @@ def histogram_window():
             
     win.getMouse()
     win.close()
+
 #Input parts
 
 def input_part():
@@ -132,8 +133,8 @@ def input_part():
     if total_credit !=120:
         print("Total Incorrect")
         return
-    
-    #conditions and file writing 
+
+#conditions and file writing 
         
     elif credits_at_pass==120 :
         print("Progress")
@@ -173,6 +174,7 @@ def input_part():
         
     results.append(f"{outcome} - {credits_at_pass}, {credits_at_defer}, {credits_at_fail}")
 input_part()
+
 
 #Loops for multiple inputs
 

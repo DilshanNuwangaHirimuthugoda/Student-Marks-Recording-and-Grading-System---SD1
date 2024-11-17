@@ -45,6 +45,52 @@ def histogram_window():
     Total_text.setFace("helvetica")
     Total_text.setTextColor("grey")
     Total_text.draw(win)
+
+        # histrogram bar edits
+    barr_width = 15
+    bar1=Rectangle(Point(100,490),Point(180 + barr_width,490-(progress / Total )*200))
+    bar1.draw(win)
+    bar1.setFill("skyblue")
+    
+    bar2 = Rectangle(Point(200, 490),Point(280 + barr_width ,490 - ( trailer / Total)*200))
+    bar2.draw(win)
+    bar2.setFill("green")
+
+    bar3 = Rectangle(Point(300, 490),Point(380 + barr_width, 490 - (retriever / Total)*200))
+    bar3.draw(win)
+    bar3.setFill("red")
+
+    bar4 = Rectangle(Point(400, 490),Point(480 + barr_width, 490 - (Exclude / Total)*200))
+    bar4.draw(win)
+    bar4.setFill("yellow")
+
+    progress_text=Text(Point(140,510),"Progress")
+    progress_text.setSize(12)
+    progress_text.draw(win)
+
+    retriever_text=Text(Point(340,510),"Retriever")
+    retriever_text.setSize(12)
+    retriever_text.draw(win)
+
+    trailer_text=Text(Point(240,510),"Trailer")
+    trailer_text.setSize(12)
+    trailer_text.draw(win)
+
+    Exclude_text=Text(Point(440,510),"Exclude")
+    Exclude_text.setSize(12)
+    Exclude_text.draw(win)
+
+    T1=Text(Point(140,510-(32)),f"{progress}")
+    T1.draw(win)
+    T2=Text(Point(240,510-(32)),f"{trailer}")
+    T2.draw(win)
+    T3=Text(Point(340,510-(32)),f"{retriever}")
+    T3.draw(win)
+    T4=Text(Point(440,510-(32)),f"{Exclude}")
+    T4.draw(win)
+            
+    win.getMouse()
+    win.close()
 #Input parts
 
 def input_part():

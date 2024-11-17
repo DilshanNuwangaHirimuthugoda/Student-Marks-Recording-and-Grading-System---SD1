@@ -12,6 +12,39 @@ data = []
 
 valied_marks=[0,20,40,60,80,100,120]
 
+from graphics import *
+def histogram_window():
+    #OPEN THE WINDOW 
+    # #open a window object called "win" with size and title 
+    # Set the background colour of the window
+    
+    win = GraphWin ("Histogram", 800, 600)
+    win.setBackground("Mint Cream")
+    heading = Text(Point(200, 30), 'Histogram Results')
+
+   
+    #histogram heading & line
+
+    heading.setTextColor("grey")
+    heading.setSize(23)
+    heading.setStyle("bold")
+    heading.setFace("helvetica")
+    heading.draw(win)
+
+    line= Line(Point(20,50),Point(375,50))
+    line.draw(win)
+
+    line=Line(Point(50,490),Point(550,490))
+    line.draw(win)
+
+    Total=progress+retriever+trailer+Exclude
+
+    Total_text=Text(Point(185,550),str(Total) + " Outcomes in Total")
+    Total_text.setSize(15)
+    Total_text.setStyle("bold")
+    Total_text.setFace("helvetica")
+    Total_text.setTextColor("grey")
+    Total_text.draw(win)
 #Input parts
 
 def input_part():

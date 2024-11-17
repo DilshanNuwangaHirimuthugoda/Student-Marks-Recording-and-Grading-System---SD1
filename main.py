@@ -132,3 +132,44 @@ def input_part():
     if total_credit !=120:
         print("Total Incorrect")
         return
+    
+    #conditions and file writing 
+        
+    elif credits_at_pass==120 :
+        print("Progress")
+        
+        with open("Progression Outcome Report.txt", "a") as  file:
+            outcome ="Progress"
+            
+            file.write("{} - pass={} defer={} fail={} \n".format("progress",credits_at_pass,credits_at_defer,credits_at_fail))
+        data.append(f"Progress - {credits_at_pass},{credits_at_defer},{credits_at_fail}")
+        progress +=1
+    elif credits_at_pass==100:
+        print("Progress (module trailer) ")
+        outcome ="Progress (module trailer) "
+        with open("Progression Outcome Report.txt", "a") as  file:
+
+            file.write("{} - pass={} defer={} fail={} \n".format("Progress (module trailer) ",credits_at_pass,credits_at_defer,credits_at_fail))
+        data.append(f"Progress (module trailer) - {credits_at_pass},{credits_at_defer},{credits_at_fail}")
+        trailer +=1
+    elif  credits_at_fail>=80  :
+        print("Exclude")
+        
+        with open("Progression Outcome Report.txt", "a") as  file:
+            outcome ="Exclude"
+            
+            file.write("{} - pass={} defer={} fail={} \n".format("Exclude",credits_at_pass,credits_at_defer,credits_at_fail))
+        data.append(f"Exclude - {credits_at_pass},{credits_at_defer},{credits_at_fail}")
+        Exclude +=1
+    else:
+        print("Do not Progress  (module retriever)")
+        
+        with open("Progression Outcome Report.txt", "a") as  file:
+            outcome ="Do not Progress  (module retriever)"
+           
+            file.write("{} - pass={} defer={} fail={} \n".format("Do not Progress  (module retriever)",credits_at_pass,credits_at_defer,credits_at_fail))
+        data.append(f"Do not Progress  (module retriever) - {credits_at_pass},{credits_at_defer},{credits_at_fail}")
+        retriever +=1
+        
+    results.append(f"{outcome} - {credits_at_pass}, {credits_at_defer}, {credits_at_fail}")
+input_part()

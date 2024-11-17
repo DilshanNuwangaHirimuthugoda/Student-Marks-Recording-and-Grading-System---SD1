@@ -186,3 +186,16 @@ def restart():
             break
         else:
             print("Invalid input")
+
+#list
+            
+def print_list():
+    print ("\n __List_of_result__" )
+    for result in results:
+        print(result)
+
+restart()
+histogram_window()
+print_list()
+
+            

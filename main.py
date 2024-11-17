@@ -173,3 +173,16 @@ def input_part():
         
     results.append(f"{outcome} - {credits_at_pass}, {credits_at_defer}, {credits_at_fail}")
 input_part()
+
+#Loops for multiple inputs
+
+def restart():
+
+    while True:
+        again=input("Would you like to enter another set of data? \nEnter 'y' for yes or 'q' to quit and view results: ")
+        if again== "y":
+              input_part()
+        elif again=="q":
+            break
+        else:
+            print("Invalid input")
